@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".EnterNIF"
+            android:theme="@style/Theme.AppCompat.Light.Dialog">
+        </activity>
+        <activity android:name=".EnterMail"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"></activity>
     </application>
 
 </manifest>
