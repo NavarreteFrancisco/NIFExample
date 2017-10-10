@@ -24,7 +24,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 1234);
             }
         });
-
+        Button enterEmail= (Button) findViewById(R.id.button2);
+        enterEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText editText = (EditText) findViewById(R.id.editText);
+                Intent intent = new Intent(getApplicationContext(), EnterMail.class);
+                intent.putExtra("name", editText.getText().toString());
+                startActivityForResult(intent, 12345);
+            }
+        });
     }
 
     @Override
@@ -35,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
             String nif = extras.getString("nif");
             TextView textView= (TextView) findViewById(R.id.textView2);
             textView.setText(nif);
+        }
+        if (requestCode == 12345 && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            String email = extras.getString("email");
+            TextView textView= (TextView) findViewById(R.id.textView4);
+            textView.setText(email);
         }
     }
 }
